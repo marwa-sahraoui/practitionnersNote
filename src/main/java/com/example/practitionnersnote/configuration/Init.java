@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+//insertion manuel d'un exemple du patientHistory pour vérifier sa présence dans la BDD
 public class Init implements CommandLineRunner {
 
     @Autowired

@@ -23,6 +23,11 @@ public class PatientHistoryService {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid patientHistory:" + id));
     }
 
+    //list des notes pour un patient a id donné(un patient peut avoir plusieurs fiches de notes)
+    public List<PatientHistory> findAllByPatId(Long patId) {
+        return patientHistoryRepository.findAllByPatId(patId);
+    }
+
     public PatientHistory save(PatientHistory patientHistory) {
         return patientHistoryRepository.save(patientHistory);
     }
@@ -45,5 +50,10 @@ public class PatientHistoryService {
 
     public void deleteById(Long id) {
         patientHistoryRepository.deleteById(id);
+    }
+
+
+    public void deleteAll() {
+        patientHistoryRepository.deleteAll();
     }
 }

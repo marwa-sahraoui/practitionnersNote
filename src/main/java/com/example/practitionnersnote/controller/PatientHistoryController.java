@@ -20,10 +20,14 @@ public class PatientHistoryController {
     public List<PatientHistory> getAllPatientHistory(){
         return patientHistoryService.findAllPatientHistory();
     }
-    @GetMapping("/{id}")
 
+    @GetMapping("/{id}")
     public PatientHistory findById(@PathVariable Long id) {
         return patientHistoryService.findById(id);
+    }
+    @GetMapping("/patId/{patId}")
+    public List<PatientHistory> findAllByPatId(@PathVariable Long patId) {
+        return patientHistoryService.findAllByPatId(patId);
     }
 
     @PostMapping(path = "/add", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
