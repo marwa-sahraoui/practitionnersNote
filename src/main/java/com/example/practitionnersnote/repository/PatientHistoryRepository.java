@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface PatientHistoryRepository extends MongoRepository<PatientHistory, Long> {
     List<PatientHistory> findAllByPatId(Long patId);
+    List<PatientHistory> findByFamily(String family);
 }

@@ -56,4 +56,8 @@ public class PatientHistoryService {
     public void deleteAll() {
         patientHistoryRepository.deleteAll();
     }
+
+    public List<PatientHistory> findByFamily(String family){
+        return patientHistoryRepository.findByFamily(family);
+    }
 }

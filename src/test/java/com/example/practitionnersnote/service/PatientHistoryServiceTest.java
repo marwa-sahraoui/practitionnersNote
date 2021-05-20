@@ -15,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-
 class PatientHistoryServiceTest {
     @Autowired
     private PatientHistoryService patientHistoryService;
@@ -75,9 +74,8 @@ class PatientHistoryServiceTest {
      patientHistory.setId(1l);
      patientHistory.setE("Patient: TestNone Practitioner's notes/recommendations: Patient is smocker");
      patientHistoryService.save(patientHistory);
-     patientHistoryService.update(patientHistory,1l);
      patientHistory.setE("Patient: TestNone Practitioner's notes/recommendations: Patient is smocker update");
-     patientHistoryService.save(patientHistory);
+     patientHistoryService.update(patientHistory,1l);
      Assert.assertEquals(patientHistory.getE(), "Patient: TestNone Practitioner's notes/recommendations: Patient is smocker update",
                     "Patient: TestNone Practitioner's notes/recommendations: Patient is smocker update");
     }

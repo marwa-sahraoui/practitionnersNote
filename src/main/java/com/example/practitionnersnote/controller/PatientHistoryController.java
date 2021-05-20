@@ -29,6 +29,11 @@ public class PatientHistoryController {
     public List<PatientHistory> findAllByPatId(@PathVariable Long patId) {
         return patientHistoryService.findAllByPatId(patId);
     }
+    //pour répondre à l'exemple du sprint 3
+    @GetMapping("/family/{family}")
+    public List<PatientHistory> findByFamily(@PathVariable String family) {
+        return patientHistoryService.findByFamily(family);
+    }
 
     @PostMapping(path = "/add", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public PatientHistory save(PatientHistory patientHistory) {

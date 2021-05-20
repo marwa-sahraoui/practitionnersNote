@@ -13,11 +13,19 @@ public class PatientHistory {
     private Long id; //patientHistory:fiche du patient ayant un id et un patId(patient correspondant)
     private Long patId;
     private String e;
+    private String family;
 
     public PatientHistory() {
         id = IdGenerator.incrementAndGetValue(); //id  utilisé dans le constructeur
     }
-
+//
+    public PatientHistory(Long patId, String e, String family) {
+        id = IdGenerator.incrementAndGetValue();
+        this.patId = patId;
+        this.e = e;
+        this.family = family;
+    }
+//
     public PatientHistory(Long patId, String e) {
         id = IdGenerator.incrementAndGetValue();
         this.patId = patId;
@@ -46,5 +54,12 @@ public class PatientHistory {
 
     public void setE(String e) {
         this.e = e;
+    }
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
     }
 }
